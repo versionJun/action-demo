@@ -26,9 +26,9 @@ jobs:
         run: |
           npm install
 
-      - name: Run checkin
+      - name: Run main
         env:
-          refreshToken: ${{ secrets.GP_TOKEN }}
-          PUSHPLUS_TOKEN: ${{ secrets.GITHUB_REPOSITORY }}
+          GP_TOKEN: ${{ secrets.GP_TOKEN }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
         run: |
           node ./main.js
