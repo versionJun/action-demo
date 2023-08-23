@@ -41,7 +41,7 @@ async function getARepositoryPublicKey(owner, repo) {
  async function createOrUpdateARepositorySecret(data) {
 
     
-    const { secret_value, owner, repo, ...other } = data
+    const { owner = OWNER, repo = REPO, secret_name, secret_value } = data
 
     // Convert Secret & Base64 key to Uint8Array.
     const { key, key_id } = await getARepositoryPublicKey(owner, repo) // 获取公钥
@@ -56,9 +56,9 @@ async function getARepositoryPublicKey(owner, repo) {
     const encrypted_value = sodium.to_base64(encBytes, sodium.base64_variants.ORIGINAL) // 根据公钥计算加密后的值
 
     const newData = {
-        ...other,
         owner,
         repo,
+        secret_value,
         encrypted_value,
         key_id,
         headers: DEFAULT_HEADERS
@@ -68,14 +68,11 @@ async function getARepositoryPublicKey(owner, repo) {
 }
 
 !(async () => {
-    console.log('GP_TOKEN ' + GP_TOKEN);
-    console.log('OWNER' + OWNER);
-    console.log('REPO' + REPO);
 
     try {
         let res = await createOrUpdateARepositorySecret({
-            owner: OWNER, // GitHub 用户名
-            repo: REPO, // 仓库的名称
+            //owner: OWNER, // GitHub 用户名
+            //repo: REPO, // 仓库的名称
             secret_name: 'SECRET_NAME_TEST', // 要更改的 secret
             secret_value: 'SECRET_NAME_TEST_VALUE1', // 这里是 secret 的原始值
         })
