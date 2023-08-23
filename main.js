@@ -68,6 +68,9 @@ async function getARepositoryPublicKey(owner, repo) {
 }
 
 !(async () => {
+    console.log('GP_TOKEN ' + GP_TOKEN);
+    console.log('OWNER' + OWNER);
+    console.log('REPO' + REPO);
 
     try {
         let res = await createOrUpdateARepositorySecret({
@@ -79,7 +82,6 @@ async function getARepositoryPublicKey(owner, repo) {
         console.log('更新 REFRESH_TOKENS 成功 res = ' + res)
     } catch (e) {
         console.error('更新 REFRESH_TOKENS 失败' + e)
-        message.push(e)
     }
 
 })()
