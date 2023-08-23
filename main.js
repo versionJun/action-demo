@@ -15,7 +15,7 @@ const DEFAULT_HEADERS = {
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
     // auth = GitHub token，参考 https://github.com/settings/tokens ，其中至少要有 repo 或 public_repo 权限才能修改 Actions Secrets
-    auth: GP_TOKEN,
+    auth: process.env.GP_TOKEN,
     request: {
         timeout: 10 * 1000, // 记得设置超时，否则会无限等待
     }
