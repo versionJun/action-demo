@@ -58,7 +58,7 @@ async function getARepositoryPublicKey(owner, repo) {
     const newData = {
         owner,
         repo,
-        secret_value,
+        secret_name,
         encrypted_value,
         key_id,
         headers: DEFAULT_HEADERS
@@ -74,7 +74,7 @@ async function getARepositoryPublicKey(owner, repo) {
             //owner: OWNER, // GitHub 用户名
             //repo: REPO, // 仓库的名称
             secret_name: 'SECRET_NAME_TEST', // 要更改的 secret
-            secret_value: 'SECRET_NAME_TEST_VALUE1', // 这里是 secret 的原始值
+            secret_value: 'SECRET_NAME_TEST_VALUE1' // 这里是 secret 的原始值
         })
         console.log('更新 REFRESH_TOKENS 成功 res = ' + res.status)
     } catch (e) {
