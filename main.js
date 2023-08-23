@@ -15,7 +15,7 @@ const DEFAULT_HEADERS = {
 // https://github.com/octokit/core.js#readme
 const octokit = new Octokit({
     // auth = GitHub token，参考 https://github.com/settings/tokens ，其中至少要有 repo 或 public_repo 权限才能修改 Actions Secrets
-    auth: process.env.GP_TOKEN,
+    auth: GP_TOKEN,
     request: {
         timeout: 10 * 1000, // 记得设置超时，否则会无限等待
     }
@@ -79,7 +79,7 @@ async function getARepositoryPublicKey(owner, repo) {
             secret_name: 'SECRET_NAME_TEST', // 要更改的 secret
             secret_value: 'SECRET_NAME_TEST_VALUE1', // 这里是 secret 的原始值
         })
-        console.log('更新 REFRESH_TOKENS 成功 res = ' + res)
+        console.log('更新 REFRESH_TOKENS 成功 res = ' + res.status)
     } catch (e) {
         console.error('更新 REFRESH_TOKENS 失败' + e)
     }
