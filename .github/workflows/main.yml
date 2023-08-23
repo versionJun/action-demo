@@ -1,0 +1,34 @@
+name: "demo"
+
+on:
+
+  workflow_dispatch:
+
+env:
+  RUN_ENV: 'prod'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main 
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js 
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run checkin
+        env:
+          refreshToken: ${{ secrets.GP_TOKEN }}
+          PUSHPLUS_TOKEN: ${{ secrets.GITHUB_REPOSITORY }}
+        run: |
+          node ./main.js
