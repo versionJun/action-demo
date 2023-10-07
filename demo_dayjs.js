@@ -11,8 +11,16 @@ dayjs.extend(timezone)
 
 // console.log(dayjs.tz.guess())
 
-console.log(dayjs().format())
+let d = dayjs()
 
-dayjs.tz.setDefault('Asia/Shanghai')
+console.log(dayjs.tz.guess())
 
-console.log(dayjs().format())
+console.log(d.format())
+console.log(dayjs.utc(d).format())
+
+let tz = 'America/Shanghai'
+dayjs.tz.setDefault(tz)
+console.log(tz)
+
+console.log(dayjs.tz(d).format())
+console.log(dayjs.tz(d).utc().format())
