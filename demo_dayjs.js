@@ -5,8 +5,14 @@ dayjs.extend(utc)
 dayjs.extend(timezone)
 
 
-let d1 = dayjs.tz("2023-10-06 02:17:32",  "YYYY-MMMM-DD HH:mm:ss", "Asia/Shanghai") 
+// let d1 = dayjs.tz("2023-10-06 02:17:32",  "YYYY-MMMM-DD HH:mm:ss", "Asia/Shanghai") 
 
-console.log(d1)
+// console.log(d1)
 
-console.log(dayjs.tz.guess())
+// console.log(dayjs.tz.guess())
+
+
+dayjs.tz.setDefault('Asia/Shanghai')
+
+
+console.log(dayjs())
