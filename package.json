@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@octokit/core": "^5.0.0",
-    "libsodium-wrappers": "^0.7.11"
+    "libsodium-wrappers": "^0.7.11",
+    "dayjs":"^1.11.10"
   },
   "devDependencies": {},
   "description": ""
