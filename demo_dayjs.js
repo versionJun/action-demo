@@ -18,7 +18,7 @@ console.log(dayjs.tz.guess())
 console.log(d.format())
 console.log(dayjs.utc(d).format())
 
-let tz = 'America/Shanghai'
+let tz = 'Asia/Shanghai'
 dayjs.tz.setDefault(tz)
 console.log(tz)
 
