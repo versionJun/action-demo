@@ -11,16 +11,30 @@ dayjs.extend(timezone)
 
 // console.log(dayjs.tz.guess())
 
-let d = dayjs()
+// let d = dayjs()
 
-console.log(dayjs.tz.guess())
+// console.log(dayjs.tz.guess())
 
-console.log(d.format())
-console.log(dayjs.utc(d).format())
+// console.log(d.format())
+// console.log(dayjs.utc(d).format())
 
-let tz = 'Asia/Shanghai'
-dayjs.tz.setDefault(tz)
-console.log(tz)
+// let tz = 'Asia/Shanghai'
+// dayjs.tz.setDefault(tz)
+// console.log(tz)
 
-console.log(dayjs.tz(d).format())
-console.log(dayjs.tz(d).utc().format())
+// console.log(dayjs.tz(d).format())
+// console.log(dayjs.tz(d).utc().format())
+
+dayjs.tz.setDefault('Asia/Shanghai')
+
+let last_datetime = dayjs('2023-10-06 02:17:32', 'YYYY-MM-DD HH:mm:ss')
+
+console.log(last_datetime.format())
+console.log(last_datetime.toString())
+
+let now = dayjs.tz()
+
+console.log(now.format())
+console.log(now.toString())
+
+console.log(now.diff(last_datetime, 'day'))
