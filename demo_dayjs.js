@@ -11,8 +11,8 @@ dayjs.extend(timezone)
 
 // console.log(dayjs.tz.guess())
 
+console.log(dayjs().format())
 
 dayjs.tz.setDefault('Asia/Shanghai')
 
-
-console.log(dayjs())
+console.log(dayjs().format())
