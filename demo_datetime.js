@@ -1,4 +1,4 @@
-let last_sign_time = new Date('2023-10-06 02:17:32')
+let last_sign_time = new Date('2023-10-06 02:17:32 CCT')
 
 console.log(last_sign_time)
 console.log(last_sign_time.toUTCString())
