@@ -4,7 +4,8 @@ console.log(last_sign_time)
 console.log(last_sign_time.toUTCString())
 console.log(last_sign_time.toLocaleString())
 
-let now_sign_time = new Date()
+let now_sign_time = new Date(new Date().getTime() + 28800000)
+
 
 console.log(now_sign_time)
 console.log(now_sign_time.toUTCString())
