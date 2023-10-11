@@ -1,0 +1,41 @@
+name: 'demo_fs'
+
+on:
+
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main 
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run main
+        env:
+          GP_TOKEN: ${{ secrets.GP_TOKEN }}
+        run: |
+          node ./demo_fs.js
+          
+      - name: update github repository...
+        run: |
+          git config --global user.email "$EMAIL"
+          git config --global user.name "bot"
+          git add .
+          git commit -m "auto-update"
+          git push -f
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
