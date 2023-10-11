@@ -9,4 +9,4 @@ console.log(dir)
 
 
 
-fs.writeFileSync(dir,'123123123')
+fs.writeFileSync(dir,`test_${Math.random()}`)
