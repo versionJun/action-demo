@@ -23,7 +23,7 @@ log4js.configure({
         type: 'recording',
     },
     stdout: { 
-        type: "stdout",
+        type: "console",
         // layout: { 
         //   type: "div",
         // }
