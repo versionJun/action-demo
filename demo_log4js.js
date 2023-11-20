@@ -61,7 +61,7 @@ const logger = log4js.getLogger("demo_log4js")
     console.log('---')
     console.log(log4jsLayoutDiv(e))
     console.log(e)
-    cconsole.log('---')
+    console.log('---')
   })
 })()
 
