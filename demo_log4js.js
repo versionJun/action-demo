@@ -24,10 +24,9 @@ log4js.configure({
     },
     stdout: { 
         type: "stdout",
-        layout: { 
-          type: "div",
-          // separator: "," 
-        }
+        // layout: { 
+        //   type: "div",
+        // }
     },
   },
   categories: {
@@ -59,7 +58,10 @@ const logger = log4js.getLogger("demo_log4js")
 
 
   recording.replay().map((e) => {
+    cconsole.log('---')
+    console.log(log4jsLayoutDiv(e))
     console.log(e)
+    cconsole.log('---')
   })
 })()
 
