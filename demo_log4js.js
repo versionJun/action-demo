@@ -14,7 +14,7 @@ log4js.addLayout("div", function (config) {
 });
 
 function log4jsLayoutDiv(log4jsEvent, log4jsConfig){
-  return `${dayjs(log4jsEvent.startTime).format('YYYY-MM-DD HH:mm:ss')} ${log4jsEvent.data.join('')}`    
+  return `${dayjs.tz(log4jsEvent.startTime).format('YYYY-MM-DD HH:mm:ss')} ${log4jsEvent.data.join('')}`    
 }
 
 log4js.configure({
