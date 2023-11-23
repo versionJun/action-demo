@@ -5,7 +5,8 @@ on:
   workflow_dispatch:
 
 env:
-  IS_SCHEDULE: ${{ github.event_name  != 'schedule' && 'true' || 'false' }}
+  # IS_SCHEDULE: ${{ github.event_name  == 'schedule' && 'true' || 'false' }}
+  IS_SCHEDULE: ${{ github.event_name  == 'schedule' }}
 
 jobs:
   build:
