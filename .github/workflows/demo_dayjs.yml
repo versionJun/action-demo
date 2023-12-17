@@ -7,7 +7,8 @@ on:
 env:
   # IS_SCHEDULE: ${{ github.event_name  == 'schedule' && 'true' || 'false' }}
   IS_SCHEDULE: ${{ github.event_name  == 'schedule' }}
-
+  SLEEP_SECOND: $${{ shuf -i 10-120 -n 1 }}
+  
 jobs:
   build:
     runs-on: ubuntu-latest
