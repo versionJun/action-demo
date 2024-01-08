@@ -18,4 +18,6 @@ console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
 
 console.log(new Date().getTimezoneOffset() / 60)
 
-console.log((new Date())
+let nowDate = new Date()
+console.log(nowDate)
+console.log(nowDate.toLocaleString())
