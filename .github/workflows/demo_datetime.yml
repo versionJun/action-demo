@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 
 env:
+  # 设置Github Action时区为Asia/Shanghai
   TZ: Asia/Shanghai
 
 jobs:
