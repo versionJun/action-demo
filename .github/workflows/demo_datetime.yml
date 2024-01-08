@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  RUN_ENV: 'prod'
+  TZ: Asia/Shanghai
 
 jobs:
   build:
